@@ -11,7 +11,7 @@ foreach (glob("books/*.fb2") as $filename) {
 $result = preg_match_all("/<p>.*<\/p>/m", file_get_contents($filename), $out);
 for($i = 0; $i<count($out[0]);$i++){
 if(preg_match("/\s" . $seekWord . "\s/im", $out[0][$i])){
-echo "Совпадение было найдено в файле: .<b>" . $filename . "</b><br>" . preg_replace("/" . $seekWord . "/im", "<span style='background:yellow;'>" . $seekWord . "</span>", $out[0][$i]);
+echo "Match was found in file: .<b>" . $filename . "</b><br>" . preg_replace("/" . $seekWord . "/im", "<span style='background:yellow;'>" . $seekWord . "</span>", $out[0][$i]);
 }}}
 ?>
 
@@ -23,6 +23,3 @@ echo "Совпадение было найдено в файле: .<b>" . $filename . "</b><br>" . preg_rep
 </form>
 
   </body> </html>
-
-
-
